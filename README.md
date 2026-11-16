@@ -1,4 +1,4 @@
-*this project has been created as part of 42 curriculum by miouali and yyuskiv.
+*this project has been created as part of 42 curriculum by miouali and yyuskiv.*
 
 # Minirt
 
