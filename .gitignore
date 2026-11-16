@@ -7,3 +7,4 @@
 *.s
 .DS_Store
 .last_score
+/src/lib/minilibx-linux/
