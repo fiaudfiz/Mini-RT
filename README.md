@@ -6,13 +6,12 @@
 
 ---
 
-1. [Architecture Globale de Minishell](#1-architecture-globale-minishell)
-2. [REPL](#2-repl-interface-utilisateur)
-3. [Lexer](#3-lexer)
-4. [Parser](#4-parser)
-5. [Expender](#5-expender)
-6. [Executor](#6-executor)
-7. [Ressources](#7-ressources)
+1. [What is a ray tracer ?](#1-what-is-a-ray-tracer)
+2. [How to implement a ray tracer ?](#2-how-to-implement-a-ray-tracer)
+3. [Architecture of this project](#3-architecture-of-this-project)
+4. [How use it](#4-how-use-it)
+5. [How import scenes from blender for exemple ?](#5-how-import-scenes-from-blender-for-exemmple)
+6. [Ressources](#6-ressources)
 
 ---
 
