@@ -6,12 +6,25 @@
 /*   By: fiaudfiz <fiaudfiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 12:39:58 by fiaudfiz          #+#    #+#             */
-/*   Updated: 2026/11/12 18:46:16 by fiaudfiz         ###   ########.fr       */
+/*   Updated: 2026/11/16 22:30:41 by fiaudfiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINIRT_H
 # define MINIRT_H
+
+# ifndef WIN_WIDTH
+#  define WIN_WIDTH 1000
+# endif
+
+# ifndef TILE_SIZE
+#  define TILE_SIZE 32
+# endif
+
+# ifndef WIN_HEIGHT
+#  define WIN_HEIGHT 1000
+# endif
+
 
 # define EPSILON 0.0001f
 
@@ -53,6 +66,13 @@ typedef struct s_minirt
 {
     t_cam   *camera;
     t_world world;
+    void    *mlx;
+    void    *win;
+    void    *img;
+    char    *addr;
+    int     bits_per_pixel;
+    int     line_lenght;
+    int     endian;
 } t_minirt;
 
 #endif
