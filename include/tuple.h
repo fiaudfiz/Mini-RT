@@ -6,7 +6,7 @@
 /*   By: fiaudfiz <fiaudfiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 12:25:43 by fiaudfiz          #+#    #+#             */
-/*   Updated: 2026/11/12 12:33:14 by fiaudfiz         ###   ########.fr       */
+/*   Updated: 2026/11/16 21:35:34 by fiaudfiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,9 @@ typedef struct  s_tuple
 } t_tuple;
 
 t_tuple     create_tuple(float new_x, float new_y, float new_z);
+t_tuple add_tupple (t_tuple a, t_tuple b);
+t_tuple sub_tuple (t_tuple a, t_tuple b);
+t_tuple mul_tuple_by_nb (t_tuple a, int b);
+t_tuple div_tuple_by_nb (t_tuple a, int b);
 
 #endif
