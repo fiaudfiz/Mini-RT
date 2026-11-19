@@ -6,7 +6,7 @@
 /*   By: fiaudfiz <fiaudfiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 18:36:15 by fiaudfiz          #+#    #+#             */
-/*   Updated: 2026/11/12 18:36:56 by fiaudfiz         ###   ########.fr       */
+/*   Updated: 2026/11/19 12:24:07 by fiaudfiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 #include "point.h"
 #include "vec3.h"
+#include "shape.h"
+
+typedef struct s_intersection
+{
+    t_shape *s;
+    float   t;
+}t_intersection;
 
 typedef struct s_ray
 {
