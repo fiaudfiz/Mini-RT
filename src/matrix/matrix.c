@@ -16,7 +16,7 @@
 #include "vec3.h"
 
 
-t_matrix create_matrix_four_by_four (int *first_line, int *second_line, int *third_line, int *fourth_line)
+t_matrix create_matrix_four_by_four (float *first_line, float *second_line, float *third_line, float *fourth_line)
 {
     t_matrix    new;
         
@@ -42,18 +42,19 @@ t_matrix create_matrix_two_by_two (int *first_line, int *second_line)
 
 bool if_eq_matrix(t_matrix *a, t_matrix *b)
 {
-    int i = 0;
+    int i;
     int j;
     
     if (a->x_size != b->x_size || a->y_size != b->y_size)
         return (1);
+    i = 0;
     while (i < a->x_size)
     {
         j = 0;
         while (j < a->y_size)
         {
-            if (a->matrix[i][j] != b->matrix[i][j])
-                return (1);
+            if (fabsf(a->matrix[i][j] - b->matrix[i][j]) > EPSILON)
+                return (0);
             j++;
         }
         i++;
@@ -64,9 +65,10 @@ bool if_eq_matrix(t_matrix *a, t_matrix *b)
 t_matrix mult_matrix(t_matrix *a, t_matrix *b)
 {
     t_matrix new;
-    int i = 0;
-    int j = 0;
-
+    int i;
+    int j;
+    
+    i = 0;
     while (i < 4)
     {
         j = 0;

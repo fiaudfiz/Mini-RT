@@ -33,20 +33,18 @@ t_tuple sub_tuple(t_tuple a, t_tuple b)
     return (new);
 }
 
-t_tuple mul_tuple_by_nb(t_tuple a, int b)
+t_tuple mul_tuple_by_nb (t_tuple a, int b)
 {
-    a.x = mul_point_by_nb(a.x, b);
-    a.y = mul_point_by_nb(a.y, b);
-    a.z = mul_point_by_nb(a.z, b);
+    a.x = mul_point_by_nb (a.x, b);
+    a.y = mul_point_by_nb (a.y, b);
+    a.z = mul_point_by_nb (a.z, b);
     return (a);
 }
 
-t_tuple div_tuple_by_nb(t_tuple a, int b)
+t_tuple div_tuple_by_nb (t_tuple a, int b)
 {
     a.x = div_point_by_nb(a.x, b);
     a.y = div_point_by_nb(a.y, b);
     a.z = div_point_by_nb(a.z, b);
     return (a);
 }
-
-ghjfghjgfghjgghg

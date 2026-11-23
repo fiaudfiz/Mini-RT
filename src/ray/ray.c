@@ -30,7 +30,7 @@ t_point position(t_ray *r, float t)
 t_intersection *intersection(t_shape *s, t_ray *r)
 {
     t_intersection result[2];
-    float dis;
+    float discr;
     float a;
     float b;
     float c;
@@ -44,21 +44,21 @@ t_intersection *intersection(t_shape *s, t_ray *r)
     a = dot(r->direction, r->direction);
     b = 2 * dot(r->direction,  sphere_to_ray);
     c = dot(sphere_to_ray, sphere_to_ray) - 1;
-    dis = (b * b) - 4 * a * c; 
-    if ( dis < 0)
+    discr = (b * b) - 4 * a * c; 
+    if ( discr < 0)
         return;
     else
     {
-        result[0].t = ((-b - sqrt(dis) / (2 * a)));
+        result[0].t = ((-b - sqrt(discr) / (2 * a)));
         result[0].s = s;
-        result[1].t = ((-b + sqrt(dis) / (2 * a)));
+        result[1].t = ((-b + sqrt(discr) / (2 * a)));
         result[1].s = s;
         if ( result[0].t == result [1].t)
             result[2].t = 1;
         else
             result[2].t = 2;
     }
-    return (result)
+    return (result);
 }
 
 //intersections rassemble des minis tebleaux en un seu pour envoyer que un paramrtre a hit()
