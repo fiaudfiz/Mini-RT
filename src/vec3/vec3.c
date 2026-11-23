@@ -6,7 +6,7 @@
 /*   By: fiaudfiz <fiaudfiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 21:39:13 by fiaudfiz          #+#    #+#             */
-/*   Updated: 2026/11/16 22:06:47 by fiaudfiz         ###   ########.fr       */
+/*   Updated: 2026/11/20 10:37:35 by fiaudfiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,28 @@ t_vec3  cross(t_vec3 a, t_vec3 b)
     new.y = a.z * b.x - a.x * b.z;
     new.z = a.x * b.y - a.y * b.x;
     return (new);
+}
+
+t_vec3 mul_vec3_scalar(t_vec3 *v, float t)
+{
+    t_vec3 new;
+
+    new.x = t * v->x;
+    new.y = t * v->y;
+    new.z = t * v->z;
+    return (new);
+}
+
+t_vec3 div_vec3_scalar(t_vec3 *v, float t)
+{
+    t_vec3 new;
+
+    if (t != 0)
+    {
+        new.x = v->x / t;
+        new.y = v->y / t;
+        new.z = v->z / t;
+        return (new);
+    }
+    return (null);
 }
