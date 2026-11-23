@@ -6,7 +6,7 @@
 /*   By: fiaudfiz <fiaudfiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 23:16:28 by fiaudfiz          #+#    #+#             */
-/*   Updated: 2026/11/17 20:24:04 by fiaudfiz         ###   ########.fr       */
+/*   Updated: 2026/11/19 16:41:35 by fiaudfiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,10 @@ bool if_eq_matrix(t_matrix *a, t_matrix *b)
     
     if (a->x_size != b->x_size || a->y_size != b->y_size)
         return (1);
-    while (i < 4)
+    while (i < a->x_size)
     {
         j = 0;
-        while (j < 4)
+        while (j < a->y_size)
         {
             if (a->matrix[i][j] != b->matrix[i][j])
                 return (1);
@@ -107,7 +107,7 @@ t_matrix transpose_matrix(t_matrix *a)
     new.matrix[0][0] = a->matrix[0][0];
     new.matrix[0][1] = a->matrix[1][0];
     new.matrix[0][2] = a->matrix[2][0];
-    new.matrix[0][3] = a->matrix[3][2];
+    new.matrix[0][3] = a->matrix[3][0];
     new.matrix[1][0] = a->matrix[0][1];
     new.matrix[1][1] = a->matrix[1][1];
     new.matrix[1][2] = a->matrix[2][1];
@@ -198,7 +198,7 @@ t_matrix inverse(t_matrix *a)
         while (j < a->y_size)
         {
             c = cofactor (a, i, j);
-            new.matrix[j][i] = c/det(a);
+            new.matrix[j][i] = c / det(a);
             j++;
         }
         i++;
