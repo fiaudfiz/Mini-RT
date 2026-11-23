@@ -6,7 +6,7 @@
 /*   By: fiaudfiz <fiaudfiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 18:36:15 by fiaudfiz          #+#    #+#             */
-/*   Updated: 2026/11/19 12:24:07 by fiaudfiz         ###   ########.fr       */
+/*   Updated: 2026/11/19 16:37:02 by fiaudfiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,10 @@ typedef struct s_ray
     t_point origin;
     t_vec3 direction;
 } t_ray;
+
+t_point position(t_ray *r, float t);
+t_intersection *intersection(t_shape *s, t_ray *r);
+t_intersection *hit(t_intersection **i);
+
 
 #endif
