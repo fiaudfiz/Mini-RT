@@ -6,12 +6,14 @@
 /*   By: fiaudfiz <fiaudfiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 12:35:11 by fiaudfiz          #+#    #+#             */
-/*   Updated: 2026/11/17 12:00:12 by fiaudfiz         ###   ########.fr       */
+/*   Updated: 2026/11/19 16:36:05 by fiaudfiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATRIX_H
 # define MATRIX_H
+
+#include <stdbool.h>
 
 typedef struct s_matrix
 {
@@ -20,6 +22,17 @@ typedef struct s_matrix
     float **matrix;
 }  t_matrix;
 
-
+t_point mult_matrix_point(t_matrix *a, t_point *b);
+t_matrix create_matrix_four_by_four (int *first_line, int *second_line, int *third_line, int *fourth_line);
+bool if_eq_matrix(t_matrix *a, t_matrix *b);
+t_matrix mult_matrix(t_matrix *a, t_matrix *b);
+t_point mult_matrix_point(t_matrix *a, t_point *b);
+t_vec3  mult_matrix_vec3(t_matrix *a, t_vec3 *vec);
+t_matrix transpose_matrix(t_matrix *a);
+float   determinant(t_matrix *a);
+t_matrix    submatrix(t_matrix *a, int row, int col);
+float   minor(t_matrix *a, int row, int col);
+float   cofactor(t_matrix *a, int row, int col);
+t_matrix inverse(t_matrix *a);
 
 #endif
