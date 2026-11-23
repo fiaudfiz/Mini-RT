@@ -23,7 +23,7 @@ typedef struct s_matrix
 }  t_matrix;
 
 t_point mult_matrix_point(t_matrix *a, t_point *b);
-t_matrix create_matrix_four_by_four (int *first_line, int *second_line, int *third_line, int *fourth_line);
+t_matrix create_matrix_four_by_four (float *first_line, float *second_line, float *third_line, float *fourth_line);
 bool if_eq_matrix(t_matrix *a, t_matrix *b);
 t_matrix mult_matrix(t_matrix *a, t_matrix *b);
 t_point mult_matrix_point(t_matrix *a, t_point *b);

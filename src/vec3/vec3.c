@@ -11,13 +11,13 @@
 /* ************************************************************************** */
 
 #include "vec3.h"
-#include "math.h"
+#include <math.h>
 
 float vec3_lenght(t_vec3 a)
 {
-    return ((float)sqrt((a.x * a.x) + (a.y * a.y) + (a.z * a.z)));
+    return ((float)sqrtf((a.x * a.x) + (a.y * a.y) + (a.z * a.z)));
 }
-
+//sqrtf for float
 t_vec3  normalize_vec3 (t_vec3 a)
 {
     t_vec3 new;
@@ -37,7 +37,7 @@ t_vec3  cross(t_vec3 a, t_vec3 b)
 {
     t_vec3 new;
 
-    new.x = a.y * b.z - a.z - b.y;
+    new.x = a.y * b.z - a.z * b.y;
     new.y = a.z * b.x - a.x * b.z;
     new.z = a.x * b.y - a.y * b.x;
     return (new);
@@ -57,12 +57,12 @@ t_vec3 div_vec3_scalar(t_vec3 *v, float t)
 {
     t_vec3 new;
 
-    if (t != 0)
+    if (t != 0.0f)
     {
         new.x = v->x / t;
         new.y = v->y / t;
         new.z = v->z / t;
         return (new);
     }
-    return (null);
+    return (*v);
 }

@@ -26,7 +26,7 @@ typedef struct  s_tuple
 t_tuple     create_tuple(float new_x, float new_y, float new_z);
 t_tuple add_tupple (t_tuple a, t_tuple b);
 t_tuple sub_tuple (t_tuple a, t_tuple b);
-t_tuple mul_tuple_by_nb (t_tuple a, int b);
-t_tuple div_tuple_by_nb (t_tuple a, int b);
+t_tuple mul_tuple_by_nb (t_tuple a, float b);
+t_tuple div_tuple_by_nb (t_tuple a, float b);
 
 #endif
