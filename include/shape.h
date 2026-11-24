@@ -6,7 +6,7 @@
 /*   By: fiaudfiz <fiaudfiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 15:25:24 by fiaudfiz          #+#    #+#             */
-/*   Updated: 2026/11/16 20:46:26 by fiaudfiz         ###   ########.fr       */
+/*   Updated: 2026/11/24 14:07:22 by fiaudfiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "vec3.h"
 #include "tuple.h"
 #include "point.h"
+#include "matrix.h"
 
 typedef enum e_shape_type
 {
@@ -45,7 +46,7 @@ typedef struct  s_shape
     t_shape_type    type;
     t_vec3  normal_vector;
     t_material  material;
-
+    t_matrix    *transform;
 } t_shape;
 
 typedef struct s_sphere
