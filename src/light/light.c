@@ -6,7 +6,7 @@
 /*   By: fiaudfiz <fiaudfiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/23 20:11:05 by fiaudfiz          #+#    #+#             */
-/*   Updated: 2026/11/23 20:37:57 by fiaudfiz         ###   ########.fr       */
+/*   Updated: 2026/11/24 13:44:58 by fiaudfiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "minirt.h"
 #include <math.h>
 
-t_light lightning(t_material *m, t_light *l, t_point *p ,t_vec3 *eyev, t_vec3 *normal_v)
+t_light lightning(t_material *m, t_light *l, t_point *p ,t_vec3 *eyev, t_vec3 *normal_v, bool shadowed)
 {
     effective_color = m->color * l->intensity;
     t_vec3 lightv;
@@ -46,5 +46,25 @@ t_light lightning(t_material *m, t_light *l, t_point *p ,t_vec3 *eyev, t_vec3 *n
 
 t_color *shade_hit(t_world *w, t_comps *comps)
 {
-    return (lightning(&comps->obj->material, w->light, comps->point, comps->eyev, comps->normal_v));
+    bool shadowed;
+    shadowed = is_shadowed(w, comps.over_point);
+    return (lightning(&comps->obj->material, w->light, comps->point, comps->eyev, comps->normal_v, shadowed));
+}
+
+
+bool is_shadowed(t_world *w, t_point *p)
+{
+    t_vec3 *v;
+
+    v = w->light.position - p;
+    float distance = vec3_lenght(v);
+    float direction = normalize_vec3(v);
+    t_ray *r;
+    r->origin = p;
+    r->direction = direction;
+    t_intersection *i = intersect_world(w, r);
+    h = hit(i);
+    if (h && (h.t < distance))
+        return (true);
+    return (false);
 }
