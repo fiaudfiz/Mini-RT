@@ -6,7 +6,7 @@
 /*   By: fiaudfiz <fiaudfiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/23 10:35:47 by fiaudfiz          #+#    #+#             */
-/*   Updated: 2026/11/24 11:10:08 by fiaudfiz         ###   ########.fr       */
+/*   Updated: 2026/11/24 13:46:08 by fiaudfiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ t_comps   *prepare_computation(t_intersection *i, t_ray *r)
     comps->point = position(r, comps->t);
     comps->eyev = mul_vec3_scalar(&r->direction, comps->t);
     comps->normal_v = normal_at(comps->obj, comps->point);
+    comps->over_point = comps->point + comps->normalv * EPSILON;
     if (dot(&comps->normal_v, &comps->eyev) < 0)
     {
         comps->inside = true;
