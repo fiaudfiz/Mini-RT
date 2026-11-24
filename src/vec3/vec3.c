@@ -6,7 +6,7 @@
 /*   By: fiaudfiz <fiaudfiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 21:39:13 by fiaudfiz          #+#    #+#             */
-/*   Updated: 2026/11/20 10:37:35 by fiaudfiz         ###   ########.fr       */
+/*   Updated: 2026/11/23 20:10:34 by fiaudfiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 float vec3_lenght(t_vec3 a)
 {
-    return ((float)sqrtf((a.x * a.x) + (a.y * a.y) + (a.z * a.z)));
+    return (sqrtf((a.x * a.x) + (a.y * a.y) + (a.z * a.z)));
 }
-//sqrtf for float
+
 t_vec3  normalize_vec3 (t_vec3 a)
 {
     t_vec3 new;
@@ -28,9 +28,9 @@ t_vec3  normalize_vec3 (t_vec3 a)
     return (new); 
 }
 
-int dot(t_vec3 a, t_vec3 b)
+int dot(t_vec3 *a, t_vec3 *b)
 {
-    return (a.x * b.x + a.y * b.y + a.z * b.z);
+    return (a->x * b->x + a->y * b->y + a->z * b->z);
 }
 
 t_vec3  cross(t_vec3 a, t_vec3 b)
