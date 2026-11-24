@@ -52,15 +52,18 @@ All contributions should follow the project's coding conventions.
 - Handle memory allocation and deallocation carefully.
 - Maintain consistency with the existing architecture.
 
-## 4. Testing and Memory Safety
+## 4. Build and Testing
 
-Before submitting a Pull Request:
+Every Pull Request must satisfy the following requirements:
 
-- Ensure the project compiles successfully.
-- Test the modified functionality.
-- Run Valgrind or an equivalent memory analysis tool when applicable.
+- The project must compile successfully using the project's Makefile.
+- All compilation flags defined in the Makefile must be respected.
+- No compilation errors are allowed.
+- Modified functionality must be tested.
 - No new memory leaks, invalid memory accesses, or memory-related errors are allowed.
-- Ensure existing functionality has not been broken.
+- Existing functionality must not be broken.
+
+Valgrind or an equivalent memory analysis tool must be used when applicable.
 
 ## 5. Commit Messages
 
