@@ -42,14 +42,15 @@ Significant architectural, mathematical, or memory-management changes should rec
 
 ## 3. Coding Standards
 
-All contributions must follow the project's coding conventions.
+All contributions should follow the project's coding conventions.
 
-- Follow the applicable 42 coding standards.
+- Follow the applicable 42 coding standards whenever possible.
+- Norminette is used as a style reference, but is not a mandatory merge requirement.
 - Keep functions focused and readable.
 - Use meaningful variable and function names.
 - Avoid unnecessary code duplication.
 - Handle memory allocation and deallocation carefully.
-- Keep the code consistent with the existing architecture.
+- Maintain consistency with the existing architecture.
 
 ## 4. Testing
 
