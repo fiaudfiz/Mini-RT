@@ -6,7 +6,7 @@
 /*   By: fiaudfiz <fiaudfiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 12:39:58 by fiaudfiz          #+#    #+#             */
-/*   Updated: 2026/11/16 22:30:41 by fiaudfiz         ###   ########.fr       */
+/*   Updated: 2026/11/24 16:30:38 by fiaudfiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@ typedef struct s_canva
     int width;
     int height;
     t_pixel **tab_of_pixel;
+    int     h_size;
+    int     v_size;
+    float   field_of_view;
+    t_matrix *transform;
 } t_canva;
 
 typedef struct  s_cam
