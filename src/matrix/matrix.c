@@ -54,7 +54,7 @@ bool if_eq_matrix(t_matrix *a, t_matrix *b)
         while (j < a->y_size)
         {
             if (fabsf(a->matrix[i][j] - b->matrix[i][j]) > EPSILON)
-                return (0);
+                return (1);
             j++;
         }
         i++;
@@ -67,8 +67,9 @@ t_matrix mult_matrix(t_matrix *a, t_matrix *b)
     t_matrix new;
     int i;
     int j;
-    
+
     i = 0;
+    j = 0;
     while (i < 4)
     {
         j = 0;
