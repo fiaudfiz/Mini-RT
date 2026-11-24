@@ -1,0 +1,28 @@
+---
+name: Feature Request
+about: Suggest a new feature or improvement
+title: "[FEATURE] "
+labels: enhancement
+assignees: ""
+---
+
+## Feature Description
+A clear description of the proposed feature.
+
+## Motivation
+Why would this feature be useful?
+
+## Proposed Implementation
+Describe a possible implementation, if applicable.
+
+## Expected Behavior
+How should the feature work?
+
+## Technical Considerations
+- Mathematical implications:
+- Performance considerations:
+- Memory management:
+- Compatibility with existing architecture:
+
+## Additional Information
+References, examples, diagrams, or related resources.
