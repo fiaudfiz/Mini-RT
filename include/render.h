@@ -6,7 +6,7 @@
 /*   By: fiaudfiz <fiaudfiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/23 18:17:04 by fiaudfiz          #+#    #+#             */
-/*   Updated: 2026/11/23 20:03:02 by fiaudfiz         ###   ########.fr       */
+/*   Updated: 2026/11/24 13:45:32 by fiaudfiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_comps
     t_vec3          *eyev;
     t_vec3          *normal_v;
     bool            inside;
+    t_point         over_point;
 } t_comps;
 
 
