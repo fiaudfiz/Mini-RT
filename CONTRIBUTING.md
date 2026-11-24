@@ -52,13 +52,14 @@ All contributions should follow the project's coding conventions.
 - Handle memory allocation and deallocation carefully.
 - Maintain consistency with the existing architecture.
 
-## 4. Testing
+## 4. Testing and Memory Safety
 
 Before submitting a Pull Request:
 
 - Ensure the project compiles successfully.
 - Test the modified functionality.
-- Check for memory leaks and invalid memory accesses.
+- Run Valgrind or an equivalent memory analysis tool when applicable.
+- No new memory leaks, invalid memory accesses, or memory-related errors are allowed.
 - Ensure existing functionality has not been broken.
 
 ## 5. Commit Messages
