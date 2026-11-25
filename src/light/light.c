@@ -6,7 +6,7 @@
 /*   By: fiaudfiz <fiaudfiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/23 20:11:05 by fiaudfiz          #+#    #+#             */
-/*   Updated: 2026/11/24 13:44:58 by fiaudfiz         ###   ########.fr       */
+/*   Updated: 2026/11/25 18:04:45 by fiaudfiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,23 @@ t_color *shade_hit(t_world *w, t_comps *comps)
 
 bool is_shadowed(t_world *w, t_point *p)
 {
-    t_vec3 *v;
+    t_vec3 v;
+    t_intersection *h;
 
-    v = w->light.position - p;
+    v = sub_point(w->light.position, *p);
     float distance = vec3_lenght(v);
-    float direction = normalize_vec3(v);
+    t_vec3 direction = normalize_vec3(v);
     t_ray *r;
-    r->origin = p;
+    r->origin = *p;
     r->direction = direction;
     t_intersection *i = intersect_world(w, r);
-    h = hit(i);
-    if (h && (h.t < distance))
+    h = hit(i); //fonction a revoir
+    if (h && (h->t < distance))
         return (true);
     return (false);
+}
+
+t_vec3  reflect(t_vec3 *in, t_vec3 *normal)
+{
+    return (in - normal * 2 * dot(in, normal)); //fonction sub_vec3 a faire
 }
