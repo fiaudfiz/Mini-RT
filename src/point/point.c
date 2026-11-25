@@ -6,7 +6,7 @@
 /*   By: fiaudfiz <fiaudfiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 21:15:24 by fiaudfiz          #+#    #+#             */
-/*   Updated: 2026/11/20 10:43:17 by fiaudfiz         ###   ########.fr       */
+/*   Updated: 2026/11/25 18:01:42 by fiaudfiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdbool.h>
 #include "minirt.h"
 #include <math.h>
+#include "vec3.h"
 
 t_point add_point (t_point a, t_point b)
 {
@@ -25,9 +26,9 @@ t_point add_point (t_point a, t_point b)
     return (new);
 }
 
-t_point sub_point (t_point a , t_point b)
+t_vec3 sub_point (t_point a , t_point b)
 {
-    t_point new;
+    t_vec3 new;
 
     new.x = a.x - b.x;
     new.y = a.y - b.y;
