@@ -6,7 +6,7 @@
 /*   By: fiaudfiz <fiaudfiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/23 20:11:05 by fiaudfiz          #+#    #+#             */
-/*   Updated: 2026/11/25 18:04:45 by fiaudfiz         ###   ########.fr       */
+/*   Updated: 2026/11/25 18:46:40 by fiaudfiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_light lightning(t_material *m, t_light *l, t_point *p ,t_vec3 *eyev, t_vec3 *n
             specular = l->intensity * m->specular * factor; 
         }
     }
-    return (ambiant + diffuse + specular);
+    return (ambiant + diffuse + specular);     
 }
 
 t_color *shade_hit(t_world *w, t_comps *comps)
