@@ -6,7 +6,7 @@
 /*   By: fiaudfiz <fiaudfiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 10:10:59 by fiaudfiz          #+#    #+#             */
-/*   Updated: 2026/11/24 10:27:12 by fiaudfiz         ###   ########.fr       */
+/*   Updated: 2026/11/24 20:21:15 by fiaudfiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ float *intersect_world(t_world *w, t_ray *r)
 
     i = 0;
 
-    while (i < w->shapes TOTAL)
+    while (i < w->total_shapes)
     {
         tab += intersection(w->shapes[i], r); //should return every intersections in ascending order
         i++;
@@ -36,10 +36,10 @@ t_ray   ray_for_pixel (t_cam *c, int px, int py)
     float world_y;
     t_ray   new;
 
-    int x_offset = (px + 0.5) * c.pixel_size;
-    int y_offset = (py + 0.5) * c.pixel_size;
-    world_x = c.half_width - x_offset;
-    world_y = c.half_height - y_offset;
+    int x_offset = (px + 0.5) * c->pixel_size;
+    int y_offset = (py + 0.5) * c->pixel_size;
+    world_x = c->half_width - x_offset;
+    world_y = c->half_height - y_offset;
     t_pixel pix;
     t_point *p;
     p->x = world_x;

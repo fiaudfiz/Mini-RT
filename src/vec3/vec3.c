@@ -6,7 +6,7 @@
 /*   By: fiaudfiz <fiaudfiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 21:39:13 by fiaudfiz          #+#    #+#             */
-/*   Updated: 2026/11/24 14:07:53 by fiaudfiz         ###   ########.fr       */
+/*   Updated: 2026/11/25 18:05:51 by fiaudfiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ t_vec3 normal_at(t_shape *s, t_point *p)
     t_vec3 local_normal;
     t_vec3 normal_world;
 
-    local_point = inverse(s->transform) * p;
+    local_point = mult_matrix4_point(inverse(s->transform), p);
     local_normal = local_normal_at(s, local_point);
     normal_world = transpose(invserse(s->transform)) * local_normal;
     return (normalize_vec3(normal_world));
